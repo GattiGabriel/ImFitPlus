@@ -21,6 +21,8 @@
             val alturaCm = intent.getIntExtra("alturaCm", 170)
             val pesoKg = intent.getIntExtra("pesoKg", 70)
             val nivelAtividade = intent.getStringExtra("nivelAtividade") ?: ""
+            val imc = intent.getDoubleExtra("imc", 1.0)
+            val categoriaImc = intent.getStringExtra("categoria")
 
             val tmb = if (sexo === "Masculino") {
                 66 + (13.7 * pesoKg) + (5 * alturaCm) - (6.8 * idade)
@@ -39,6 +41,9 @@
                     putExtra("alturaCm", alturaCm)
                     putExtra("pesoKg", pesoKg)
                     putExtra("nivelAtividade", nivelAtividade)
+                    putExtra("imc", imc)
+                    putExtra("categoria", categoriaImc)
+                    putExtra("tmb", tmb)
                 }
 
                 Toast.makeText(

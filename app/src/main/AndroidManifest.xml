@@ -36,6 +36,10 @@
         <activity android:name=".IdealWeight" >
 
         </activity>
+
+        <activity android:name=".HealthPanel" >
+
+        </activity>
     </application>
 
 </manifest>

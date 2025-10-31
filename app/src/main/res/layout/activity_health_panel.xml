@@ -3,12 +3,11 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:gravity="center_horizontal"
+    android:gravity="left"
     android:padding="24dp">
 
-    <!-- Título -->
     <TextView
-        android:text="Peso Ideal"
+        android:text="Resumo da Saúde"
         android:textSize="24sp"
         android:textStyle="bold"
         android:textColor="@android:color/black"
@@ -17,7 +16,7 @@
         android:layout_height="wrap_content" />
 
     <TextView
-        android:id="@+id/nomePiTv"
+        android:id="@+id/healthNomeTv"
         android:text="Nome: --"
         android:textSize="18sp"
         android:layout_marginBottom="16dp"
@@ -25,31 +24,50 @@
         android:layout_height="wrap_content" />
 
     <TextView
-        android:id="@+id/pesoPiTv"
-        android:text="Peso Ideal: -- kg"
+        android:id="@+id/healthImcTv"
+        android:text="IMC: --"
         android:textSize="18sp"
         android:layout_marginBottom="16dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
 
     <TextView
-        android:id="@+id/diferencaPiTv"
-        android:text="Diferença: -- kg"
+        android:id="@+id/healthCategoryTv"
+        android:text="Categoria do IMC: --"
+        android:textSize="18sp"
+        android:layout_marginBottom="16dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:id="@+id/healthIdealTv"
+        android:text="Peso ideal: --"
+        android:textSize="18sp"
+        android:layout_marginBottom="16dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:id="@+id/healthDailyTv"
+        android:text="TMB: --"
+        android:textSize="18sp"
+        android:layout_marginBottom="16dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:id="@+id/healthWaterIntakeTv"
+        android:text="Ingestão de água: --"
         android:textSize="18sp"
         android:layout_marginBottom="16dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
 
     <Button
-        android:id="@+id/resumoSaudeBtn"
-        android:text="Exibir resumo da Saúde"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
-
-    <Button
-        android:id="@+id/voltarPiBtn"
+        android:id="@+id/healthVoltarBtn"
         android:text="Voltar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
+
 
 </LinearLayout>

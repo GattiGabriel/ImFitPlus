@@ -46,6 +46,8 @@ class ImcResult: AppCompatActivity() {
                 putExtra("alturaCm", alturaCm)
                 putExtra("pesoKg", pesoKg)
                 putExtra("nivelAtividade", nivelAtividade)
+                putExtra("imc", imc)
+                putExtra("categoria", categoria)
             }
 
             Toast.makeText(
