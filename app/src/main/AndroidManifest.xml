@@ -20,6 +20,22 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <activity android:name=".PersonalData" >
+
+        </activity>
+
+        <activity android:name=".ImcResult" >
+
+        </activity>
+
+        <activity android:name=".DailyKcalBurn" >
+
+        </activity>
+
+        <activity android:name=".IdealWeight" >
+
+        </activity>
     </application>
 
 </manifest>
