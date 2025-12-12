@@ -40,6 +40,14 @@
         <activity android:name=".HealthPanel" >
 
         </activity>
+
+        <activity android:name=".EditarFichaActivity" >
+
+        </activity>
+
+        <activity android:name=".ListaFichasActivity">
+
+        </activity>
     </application>
 
 </manifest>
