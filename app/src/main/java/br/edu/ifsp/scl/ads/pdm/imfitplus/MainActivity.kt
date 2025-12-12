@@ -19,5 +19,11 @@ class MainActivity : AppCompatActivity() {
             val intent = Intent(this, PersonalData::class.java)
             startActivity(intent)
         }
+
+        amb.savedBtn.setOnClickListener {
+            val intent = Intent(this, ListaFichasActivity::class.java)
+            startActivity(intent)
+        }
+
     }
 }
