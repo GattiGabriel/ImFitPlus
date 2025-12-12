@@ -23,6 +23,12 @@ class ImcResult: AppCompatActivity() {
         val alturaCm = intent.getIntExtra("alturaCm", 170)
         val pesoKg = intent.getIntExtra("pesoKg", 70)
         val nivelAtividade = intent.getStringExtra("nivelAtividade") ?: ""
+        val freqCardiacaMax = intent.getIntExtra("freqCardiacaMax", 10)
+        val zonaTreinoLeve = "${freqCardiacaMax.times(0.5)} - ${freqCardiacaMax.times(0.6)}"
+        val zonaTreinoQueimaGordura = "${freqCardiacaMax.times(0.6)} - ${freqCardiacaMax.times(0.7)}"
+        val zonaTreinoAerobica = "${freqCardiacaMax.times(0.7)} - ${freqCardiacaMax.times(0.8)}"
+        val zonaTreinoAnaerobica = "${freqCardiacaMax.times(0.8)} - ${freqCardiacaMax.times(0.9)}"
+        val dataNasc = intent.getStringExtra("dataNasc")
 
         val alturaMetros = alturaCm / 100.0
         val imc = pesoKg / alturaMetros.pow(2)
@@ -37,6 +43,11 @@ class ImcResult: AppCompatActivity() {
         aib.nomeTv.text = "Nome: $nome"
         aib.imcTv.text = "IMC: %.2f".format(imc)
         aib.categoriaTv.text = "Categoria: $categoria"
+        aib.freqCardiacaTv.text = "$freqCardiacaMax BPM"
+        aib.zonaTreinoLeveTv.text = "$zonaTreinoLeve BPM"
+        aib.zonaTreinoQueimaGorduraTv.text = "$zonaTreinoQueimaGordura BPM"
+        aib.zonaTreinoAerobicaTv.text = "$zonaTreinoAerobica BPM"
+        aib.zonaTreinoAnaerobicaTv.text = "$zonaTreinoAnaerobica BPM"
 
         aib.calcularBtn.setOnClickListener {
             val intent = Intent(this, DailyKcalBurn::class.java).apply {
@@ -48,6 +59,12 @@ class ImcResult: AppCompatActivity() {
                 putExtra("nivelAtividade", nivelAtividade)
                 putExtra("imc", imc)
                 putExtra("categoria", categoria)
+                putExtra("freqCardiacaMax", freqCardiacaMax)
+                putExtra("dataNasc", dataNasc)
+                putExtra("zonaTreinoLeve", zonaTreinoLeve)
+                putExtra("zonaTreinoQueimaGordura", zonaTreinoQueimaGordura)
+                putExtra("zonaTreinoAerobica", zonaTreinoAerobica)
+                putExtra("zonaTreinoAnaerobica", zonaTreinoAnaerobica)
             }
 
             Toast.makeText(

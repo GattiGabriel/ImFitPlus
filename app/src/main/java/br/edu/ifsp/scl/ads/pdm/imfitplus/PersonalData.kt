@@ -9,6 +9,8 @@ import android.widget.SeekBar
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import br.edu.ifsp.scl.ads.pdm.imfitplus.databinding.ActivityPersonalDataBinding
+import java.time.LocalDate
+import java.time.Period
 
 class PersonalData: AppCompatActivity() {
 
@@ -19,9 +21,6 @@ class PersonalData: AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(apb.root)
-
-        apb.idadeNp.minValue = 12
-        apb.idadeNp.maxValue = 100
 
         var altura = 170
         var peso = 70
@@ -71,11 +70,13 @@ class PersonalData: AppCompatActivity() {
 
         apb.salvarBtn.setOnClickListener {
             val nome = apb.nomeEt.text.toString().trim()
-            val idade = apb.idadeNp.value
+            val dataNasc = "${apb.diaNascEt.text}/${apb.mesNascEt}/${apb.anoNascEt}"
+            val idade = calculateAge(LocalDate.of(apb.anoNascEt.text.toString().toInt(), apb.mesNascEt.text.toString().toInt(), apb.diaNascEt.text.toString().toInt()))
             val sexo = if (apb.sexoRg.checkedRadioButtonId == apb.sexoMasculino.id) "Masculino" else "Feminino"
             val alturaCm = apb.alturaSb.progress
             val pesoKg = apb.pesoSb.progress
             val nivelAtividade = apb.nivelSpinner.selectedItem.toString()
+            val freqCardiacaMax = 220 - idade
 
             val intent = Intent(this, ImcResult::class.java).apply {
                 putExtra("nome", nome)
@@ -84,6 +85,8 @@ class PersonalData: AppCompatActivity() {
                 putExtra("alturaCm", alturaCm)
                 putExtra("pesoKg", pesoKg)
                 putExtra("nivelAtividade", nivelAtividade)
+                putExtra("freqCardiacaMax", freqCardiacaMax)
+                putExtra("dataNasc", dataNasc)
             }
 
             Toast.makeText(
@@ -110,4 +113,10 @@ class PersonalData: AppCompatActivity() {
 
         apb.salvarBtn.isEnabled = nomeOk && sexoOk && alturaOk && pesoOk
     }
+
+    private fun calculateAge(dataNascimento: LocalDate): Int {
+        val currentDate = LocalDate.now()
+        return Period.between(dataNascimento, currentDate).years
+    }
+
 }

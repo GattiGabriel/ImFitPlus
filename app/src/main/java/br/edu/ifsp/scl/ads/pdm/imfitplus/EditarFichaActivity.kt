@@ -1,5 +1,6 @@
 package br.edu.ifsp.scl.ads.pdm.imfitplus
 
+import android.R
 import android.os.Bundle
 import android.widget.ArrayAdapter
 import androidx.appcompat.app.AppCompatActivity
@@ -25,8 +26,8 @@ class EditarFichaActivity : AppCompatActivity() {
         repo = FichaRepository(this)
 
         // Spinner adapters
-        amb.sexoSp.adapter = ArrayAdapter(this, android.R.layout.simple_spinner_dropdown_item, opcoesSexo)
-        amb.nivelAtvFisicaSp.adapter = ArrayAdapter(this, android.R.layout.simple_spinner_dropdown_item, opcoesNivelAtv)
+        amb.sexoSp.adapter = ArrayAdapter(this, R.layout.simple_spinner_dropdown_item, opcoesSexo)
+        amb.nivelAtvFisicaSp.adapter = ArrayAdapter(this, R.layout.simple_spinner_dropdown_item, opcoesNivelAtv)
 
         fichaId = intent.getIntExtra("id", -1)
         val ficha = repo.buscarPorId(fichaId)
@@ -100,7 +101,13 @@ class EditarFichaActivity : AppCompatActivity() {
             imc = imc,
             imcCategoria = categoria,
             tmb = tmb,
-            pesoIdeal = pesoIdeal
+            pesoIdeal = pesoIdeal,
+            freqCardiacaMaxima = 20,
+            dataNasc = "teste",
+            zonaTreinoLeve = "teste",
+            zonaTreinoQueimaGordura = "teste",
+            zonaTreinoAerobica = "teste",
+            zonaTreinoAnaerobica = "teste"
         )
 
         repo.atualizar(novaFicha)

@@ -13,7 +13,7 @@ class DatabaseHelper(context: Context) : SQLiteOpenHelper(
 
     companion object {
         private const val DATABASE_NAME = "agendaImFitPlus.db"
-        private const val DATABASE_VERSION = 2
+        private const val DATABASE_VERSION = 3
 
         const val TABLE_FICHA = "ficha"
 
@@ -28,6 +28,12 @@ class DatabaseHelper(context: Context) : SQLiteOpenHelper(
         const val COL_IMC_CATEG = "categoriaImc"
         const val COL_TMB = "tmb"
         const val COL_PESO_IDEAL = "pesoIdeal"
+        const val COL_FREQ_CARDIACA = "freqCardiacaMaxima"
+        const val COL_DATA_NASC = "dataNasc"
+        const val COL_TREINO_LEVE = "zonaTreinoLeve"
+        const val COL_TREINO_QUEIMA_GORDURA = "zonaTreinoQueimaGordura"
+        const val COL_TREINO_AEROBICA = "zonaTreinoAerobica"
+        const val COL_TREINO_ANAEROBICA = "zonaTreinoAnaerobica"
     }
 
     override fun onCreate(db: SQLiteDatabase) {
@@ -43,7 +49,13 @@ class DatabaseHelper(context: Context) : SQLiteOpenHelper(
                 $COL_IMC REAL NOT NULL,
                 $COL_IMC_CATEG TEXT NOT NULL,
                 $COL_TMB REAL NOT NULL,
-                $COL_PESO_IDEAL REAL NOT NULL
+                $COL_PESO_IDEAL REAL NOT NULL,
+                $COL_FREQ_CARDIACA INTEGER NOT NULL,
+                $COL_DATA_NASC TEXT NOT NULL,
+                $COL_TREINO_LEVE TEXT NOT NULL,
+                $COL_TREINO_QUEIMA_GORDURA TEXT NOT NULL,
+                $COL_TREINO_AEROBICA TEXT NOT NULL,
+                $COL_TREINO_ANAEROBICA TEXT NOT NULL
             );
         """.trimIndent()
 

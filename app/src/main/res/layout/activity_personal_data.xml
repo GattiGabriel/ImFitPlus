@@ -25,15 +25,45 @@
             android:layout_height="wrap_content" />
 
         <TextView
-            android:text="Idade"
+            android:text="Dia de nascimento"
             android:textSize="16sp"
             android:layout_marginTop="16dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
 
-        <NumberPicker
-            android:id="@+id/idadeNp"
-            android:layout_width="wrap_content"
+        <EditText
+            android:id="@+id/diaNascEt"
+            android:inputType="number"
+            android:hint="Digite o dia"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:text="Mês de nascimeto"
+            android:textSize="16sp"
+            android:layout_marginTop="16dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <EditText
+            android:id="@+id/mesNascEt"
+            android:inputType="number"
+            android:hint="Digite o mês"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:text="Ano de nascimento"
+            android:textSize="16sp"
+            android:layout_marginTop="16dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <EditText
+            android:id="@+id/anoNascEt"
+            android:inputType="number"
+            android:hint="Digite o ano"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content" />
 
         <TextView

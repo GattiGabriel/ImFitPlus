@@ -24,6 +24,12 @@ class IdealWeight: AppCompatActivity() {
         val imc = intent.getDoubleExtra("imc", 1.0)
         val categoriaImc = intent.getStringExtra("categoria")
         val tmb = intent.getDoubleExtra("tmb", 15.0)
+        val freqCardiacaMax = intent.getIntExtra("freqCardiacaMax", 10)
+        val zonaTreinoLeve = intent.getStringExtra("zonaTreinoLeve")
+        val zonaTreinoQueimaGordura = intent.getStringExtra("zonaTreinoQueimaGordura")
+        val zonaTreinoAerobica = intent.getStringExtra("zonaTreinoAerobica")
+        val zonaTreinoAnaerobica = intent.getStringExtra("zonaTreinoAnaerobica")
+        val dataNasc = intent.getStringExtra("dataNasc")
 
         val alturaMetros = alturaCm / 100.0
 
@@ -47,6 +53,12 @@ class IdealWeight: AppCompatActivity() {
                 putExtra("tmb", tmb)
                 putExtra("pesoIdeal", pesoIdeal)
                 putExtra("diferenca", diferenca)
+                putExtra("freqCardiacaMax", freqCardiacaMax)
+                putExtra("dataNasc", dataNasc)
+                putExtra("zonaTreinoLeve", zonaTreinoLeve)
+                putExtra("zonaTreinoQueimaGordura", zonaTreinoQueimaGordura)
+                putExtra("zonaTreinoAerobica", zonaTreinoAerobica)
+                putExtra("zonaTreinoAnaerobica", zonaTreinoAnaerobica)
             }
 
             startActivity(intent)

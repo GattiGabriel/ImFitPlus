@@ -11,5 +11,11 @@ class FichaDTO (
     val imc: Double,
     val imcCategoria: String,
     val tmb: Double,
-    val pesoIdeal: Double
+    val pesoIdeal: Double,
+    val freqCardiacaMaxima: Int,
+    val dataNasc: String,
+    val zonaTreinoLeve: String,
+    val zonaTreinoQueimaGordura: String,
+    val zonaTreinoAerobica: String,
+    val zonaTreinoAnaerobica: String,
 )

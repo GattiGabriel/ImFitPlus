@@ -5,7 +5,7 @@ import android.content.Context
 import br.edu.ifsp.scl.ads.pdm.imfitplus.databaseHelper.DatabaseHelper
 import br.edu.ifsp.scl.ads.pdm.imfitplus.fichaDTO.FichaDTO
 
-class FichaRepository(private val context: Context) {
+class FichaRepository(context: Context) {
 
     private val dbHelper = DatabaseHelper(context)
 
@@ -22,6 +22,12 @@ class FichaRepository(private val context: Context) {
             put(DatabaseHelper.COL_IMC_CATEG, ficha.imcCategoria)
             put(DatabaseHelper.COL_TMB, ficha.tmb)
             put(DatabaseHelper.COL_PESO_IDEAL, ficha.pesoIdeal)
+            put(DatabaseHelper.COL_FREQ_CARDIACA, ficha.freqCardiacaMaxima)
+            put(DatabaseHelper.COL_DATA_NASC, ficha.dataNasc)
+            put(DatabaseHelper.COL_TREINO_LEVE, ficha.zonaTreinoLeve)
+            put(DatabaseHelper.COL_TREINO_QUEIMA_GORDURA, ficha.zonaTreinoQueimaGordura)
+            put(DatabaseHelper.COL_TREINO_AEROBICA, ficha.zonaTreinoAerobica)
+            put(DatabaseHelper.COL_TREINO_ANAEROBICA, ficha.zonaTreinoAnaerobica)
         }
         return db.insert(DatabaseHelper.TABLE_FICHA, null, values)
     }
@@ -48,7 +54,13 @@ class FichaRepository(private val context: Context) {
                         imc = getDouble(getColumnIndexOrThrow(DatabaseHelper.COL_IMC)),
                         imcCategoria = getString(getColumnIndexOrThrow(DatabaseHelper.COL_IMC_CATEG)),
                         tmb = getDouble(getColumnIndexOrThrow(DatabaseHelper.COL_TMB)),
-                        pesoIdeal = getDouble(getColumnIndexOrThrow(DatabaseHelper.COL_PESO_IDEAL))
+                        pesoIdeal = getDouble(getColumnIndexOrThrow(DatabaseHelper.COL_PESO_IDEAL)),
+                        freqCardiacaMaxima = getInt(getColumnIndexOrThrow(DatabaseHelper.COL_FREQ_CARDIACA)),
+                        dataNasc = getString(getColumnIndexOrThrow(DatabaseHelper.COL_DATA_NASC)),
+                        zonaTreinoLeve = getString(getColumnIndexOrThrow(DatabaseHelper.COL_TREINO_LEVE)),
+                        zonaTreinoQueimaGordura = getString(getColumnIndexOrThrow(DatabaseHelper.COL_TREINO_QUEIMA_GORDURA)),
+                        zonaTreinoAerobica = getString(getColumnIndexOrThrow(DatabaseHelper.COL_TREINO_AEROBICA)),
+                        zonaTreinoAnaerobica = getString(getColumnIndexOrThrow(DatabaseHelper.COL_TREINO_ANAEROBICA))
                     )
                 )
             }
@@ -81,7 +93,13 @@ class FichaRepository(private val context: Context) {
                 imc = cursor.getDouble(cursor.getColumnIndexOrThrow(DatabaseHelper.COL_IMC)),
                 imcCategoria = cursor.getString(cursor.getColumnIndexOrThrow(DatabaseHelper.COL_IMC_CATEG)),
                 tmb = cursor.getDouble(cursor.getColumnIndexOrThrow(DatabaseHelper.COL_TMB)),
-                pesoIdeal = cursor.getDouble(cursor.getColumnIndexOrThrow(DatabaseHelper.COL_PESO_IDEAL))
+                pesoIdeal = cursor.getDouble(cursor.getColumnIndexOrThrow(DatabaseHelper.COL_PESO_IDEAL)),
+                freqCardiacaMaxima = cursor.getInt(cursor.getColumnIndexOrThrow(DatabaseHelper.COL_FREQ_CARDIACA)),
+                dataNasc = cursor.getString(cursor.getColumnIndexOrThrow(DatabaseHelper.COL_DATA_NASC)),
+                zonaTreinoLeve = cursor.getString(cursor.getColumnIndexOrThrow(DatabaseHelper.COL_TREINO_LEVE)),
+                zonaTreinoQueimaGordura = cursor.getString(cursor.getColumnIndexOrThrow(DatabaseHelper.COL_TREINO_QUEIMA_GORDURA)),
+                zonaTreinoAerobica = cursor.getString(cursor.getColumnIndexOrThrow(DatabaseHelper.COL_TREINO_AEROBICA)),
+                zonaTreinoAnaerobica = cursor.getString(cursor.getColumnIndexOrThrow(DatabaseHelper.COL_TREINO_ANAEROBICA))
             )
             cursor.close()
             ficha

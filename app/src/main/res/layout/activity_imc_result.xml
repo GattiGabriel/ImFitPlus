@@ -39,6 +39,46 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
 
+    <TextView
+        android:id="@+id/freqCardiacaTv"
+        android:text="Frequência cardíaca máxima: --"
+        android:textSize="18sp"
+        android:layout_marginBottom="24dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:id="@+id/zonaTreinoLeveTv"
+        android:text="Zona de treino Leve: --"
+        android:textSize="18sp"
+        android:layout_marginBottom="24dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:id="@+id/zonaTreinoQueimaGorduraTv"
+        android:text="Zona de queima de Gordura: --"
+        android:textSize="18sp"
+        android:layout_marginBottom="24dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:id="@+id/zonaTreinoAerobicaTv"
+        android:text="Zona de treino aeróbica: --"
+        android:textSize="18sp"
+        android:layout_marginBottom="24dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:id="@+id/zonaTreinoAnaerobicaTv"
+        android:text="Zona de treino anaeróbica: --"
+        android:textSize="18sp"
+        android:layout_marginBottom="24dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
     <Button
         android:id="@+id/calcularBtn"
         android:text="Calcular Gasto Calórico"

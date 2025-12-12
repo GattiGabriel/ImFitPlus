@@ -27,6 +27,12 @@ class HealthPanel: AppCompatActivity() {
         val sexo = intent.getStringExtra("sexo") ?: ""
         val altura = intent.getIntExtra("alturaCm", 160)
         val nivelAtvFisica = intent.getStringExtra("nivelAtividade") ?: ""
+        val freqCardiacaMax = intent.getIntExtra("freqCardiacaMax", 10)
+        val zonaTreinoLeve = intent.getStringExtra("zonaTreinoLeve") ?: ""
+        val zonaTreinoQueimaGordura = intent.getStringExtra("zonaTreinoQueimaGordura") ?: ""
+        val zonaTreinoAerobica = intent.getStringExtra("zonaTreinoAerobica") ?: ""
+        val zonaTreinoAnaerobica = intent.getStringExtra("zonaTreinoAnaerobica") ?: ""
+        val dataNasc = intent.getStringExtra("dataNasc") ?: ""
 
         val ingestaoAgua = pesoKg * 0.35  // agora é Double
 
@@ -56,6 +62,12 @@ class HealthPanel: AppCompatActivity() {
                 imcCategoria = categoria,
                 tmb = tmb,
                 pesoIdeal = pesoIdeal,
+                freqCardiacaMaxima = freqCardiacaMax,
+                dataNasc = dataNasc,
+                zonaTreinoLeve = zonaTreinoLeve,
+                zonaTreinoQueimaGordura = zonaTreinoQueimaGordura,
+                zonaTreinoAerobica = zonaTreinoAerobica,
+                zonaTreinoAnaerobica = zonaTreinoAnaerobica,
             )
 
             repo.inserir(ficha)

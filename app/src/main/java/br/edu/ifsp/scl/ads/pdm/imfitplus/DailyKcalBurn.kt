@@ -23,6 +23,12 @@
             val nivelAtividade = intent.getStringExtra("nivelAtividade") ?: ""
             val imc = intent.getDoubleExtra("imc", 1.0)
             val categoriaImc = intent.getStringExtra("categoria")
+            val freqCardiacaMax = intent.getIntExtra("freqCardiacaMax", 10)
+            val zonaTreinoLeve = intent.getStringExtra("zonaTreinoLeve")
+            val zonaTreinoQueimaGordura = intent.getStringExtra("zonaTreinoQueimaGordura")
+            val zonaTreinoAerobica = intent.getStringExtra("zonaTreinoAerobica")
+            val zonaTreinoAnaerobica = intent.getStringExtra("zonaTreinoAnaerobica")
+            val dataNasc = intent.getStringExtra("dataNasc")
 
             val tmb = if (sexo === "Masculino") {
                 66 + (13.7 * pesoKg) + (5 * alturaCm) - (6.8 * idade)
@@ -44,6 +50,12 @@
                     putExtra("imc", imc)
                     putExtra("categoria", categoriaImc)
                     putExtra("tmb", tmb)
+                    putExtra("freqCardiacaMax", freqCardiacaMax)
+                    putExtra("dataNasc", dataNasc)
+                    putExtra("zonaTreinoLeve", zonaTreinoLeve)
+                    putExtra("zonaTreinoQueimaGordura", zonaTreinoQueimaGordura)
+                    putExtra("zonaTreinoAerobica", zonaTreinoAerobica)
+                    putExtra("zonaTreinoAnaerobica", zonaTreinoAnaerobica)
                 }
 
                 Toast.makeText(

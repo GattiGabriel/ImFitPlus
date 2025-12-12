@@ -40,7 +40,7 @@ class FichaAdapter(
         holder.tvAltura.text = "Altura: ${f.altura}"
         holder.tvPeso.text = "Peso: ${f.peso}"
         holder.tvNivel.text = "Atividade: ${f.nivelAtvFisica}"
-        holder.tvImc.text = "IMC: %.1f".format(f.imc)
+        holder.tvImc.text = "IMC: %.2f".format(f.imc)
 
         holder.itemView.setOnClickListener { onClick(f) }
     }
